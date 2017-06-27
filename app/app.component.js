@@ -7,12 +7,20 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
 };
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
+const task_js_1 = require("./model/task.js");
 let AppComponent = class AppComponent {
+    constructor() {
+        this.tasks = [
+            new task_js_1.Task("Buy a monkey", false),
+            new task_js_1.Task("Walk the turtle", false)
+        ];
+    }
 };
 AppComponent = __decorate([
     core_1.Component({
+        moduleId: module.id,
         selector: 'my-app',
-        template: '<h1> Skeleton Project </h1>'
+        templateUrl: 'app.component.html'
     })
 ], AppComponent);
 exports.AppComponent = AppComponent;

@@ -5,23 +5,25 @@ var __decorate = (this && this.__decorate) || function (decorators, target, key,
     else for (var i = decorators.length - 1; i >= 0; i--) if (d = decorators[i]) r = (c < 3 ? d(r) : c > 3 ? d(target, key, r) : d(target, key)) || r;
     return c > 3 && r && Object.defineProperty(target, key, r), r;
 };
+var __metadata = (this && this.__metadata) || function (k, v) {
+    if (typeof Reflect === "object" && typeof Reflect.metadata === "function") return Reflect.metadata(k, v);
+};
 Object.defineProperty(exports, "__esModule", { value: true });
 const core_1 = require("@angular/core");
-const platform_browser_1 = require("@angular/platform-browser");
-const app_component_1 = require("./app.component");
-const card_component_1 = require("./card/card.component");
-let AppModule = class AppModule {
+const task_1 = require("../model/task");
+let CardComponent = class CardComponent {
 };
-AppModule = __decorate([
-    core_1.NgModule({
-        imports: [platform_browser_1.BrowserModule],
-        declarations: [
-            app_component_1.AppComponent,
-            card_component_1.CardComponent
-        ],
-        bootstrap: [app_component_1.AppComponent]
+__decorate([
+    core_1.Input(),
+    __metadata("design:type", task_1.Task)
+], CardComponent.prototype, "task", void 0);
+CardComponent = __decorate([
+    core_1.Component({
+        moduleId: module.id,
+        selector: 'app-card',
+        templateUrl: 'card.component.html',
+        styleUrls: ['card.component.css']
     })
-], AppModule);
-exports.AppModule = AppModule;
-;
-//# sourceMappingURL=app.module.js.map
+], CardComponent);
+exports.CardComponent = CardComponent;
+//# sourceMappingURL=card.component.js.map
